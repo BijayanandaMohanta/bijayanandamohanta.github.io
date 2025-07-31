@@ -22,7 +22,7 @@ body {
   ); /* Ensures at least 2rem, scales up with viewport */
   border-left: 1px dashed var(--accent-color);
   border-right: 1px dashed var(--accent-color);
-  @media (width < 30rem) {
+  @media (width < 40rem) {
     margin-inline: 1rem;
   }
 }
@@ -113,7 +113,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  @media(width < 30rem){
+  @media (width < 30rem) {
     grid-template-columns: 1fr;
   }
 }
@@ -128,11 +128,11 @@ footer {
 .answer-view {
   display: none;
   padding: 1rem;
-  border-radius: .35rem;
+  border-radius: 0.35rem;
   background: var(--background-light-blue-color);
   min-height: 40px;
   box-shadow: var(--box-shadow-light);
-  small{
+  small {
     color: #5d5d5d;
   }
 }
