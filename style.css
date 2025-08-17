@@ -32,6 +32,14 @@ img {
 .pb-1o5 {
   padding-bottom: 1.5rem;
 }
+#online-tag {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--accent-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+}
 .intro {
   padding-block: 2rem;
   font-size: min(5rem, 2rem + 3vw);
@@ -46,8 +54,11 @@ hr {
   border: none;
   border-bottom: 1px dashed var(--accent-color);
 }
-.techstack ul {
+.mt-2 {
   margin-top: 2rem;
+}
+.techstack ul {
+  margin-bottom: 2rem;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
@@ -56,6 +67,10 @@ hr {
     padding: 0.5rem 1rem;
     box-shadow: var(--box-shadow-light);
     border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
   }
 }
 .companyinfo img {
@@ -143,4 +158,16 @@ footer {
   border: none;
   font-size: 1.36rem;
   cursor: pointer;
+}
+
+/* Generated code */
+mark {
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMjAiPjxwYXRoIGQ9Ik0wLDEwIFEwLDAgMjAsMTAgVDQwLDEwIFYxMCBMNjAsMTAgTDgwLDEwIDEwMCwxMCIgc3Ryb2tlPSIjZmZmMTc2IiBzdHJva2Utd2lkdGg9IjEyIiBmaWxsPSJub25lIiAvPjwvc3ZnPg==")
+    repeat-x;
+  background-size: auto 1.6em;
+  color: black;
+  font-weight: bold;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  position: relative;
 }
