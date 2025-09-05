@@ -32,14 +32,18 @@ img {
 .pb-1o5 {
   padding-bottom: 1.5rem;
 }
-#online-tag {
+#online-tag,
+#book-a-call small {
   display: inline-flex;
   align-items: center;
   border: 1px solid var(--accent-color);
   padding: 0.25rem 0.5rem;
   border-radius: 1rem;
   margin-top: 1rem;
+  gap: 4px;
+  color: #111;
 }
+
 .intro {
   padding-block: 2rem;
   font-size: min(5rem, 2rem + 3vw);
