@@ -153,6 +153,9 @@ hr {
     justify-content: center;
     align-items: center;
     gap: 2px;
+    @media(width < 40rem){
+      flex-direction: column;
+    }
   }
 }
 .companyinfo img {
