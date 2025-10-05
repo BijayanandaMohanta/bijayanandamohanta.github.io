@@ -64,3 +64,25 @@ function setupWhatsAppRedirection() {
 
 // Initialize WhatsApp redirection on load
 setupWhatsAppRedirection();
+
+// Tooltip Functionality
+$(document).ready(function() {
+  $('a[data-tooltip-text]').hover(function(e) {
+    const tooltipText = $(this).attr('data-tooltip-text');
+    const $tooltip = $('<span class="custom-tooltip"></span>').text(tooltipText);
+    $('body').append($tooltip);
+
+    const offset = $(this).offset();
+    const width = $(this).outerWidth();
+    const height = $(this).outerHeight();
+
+    $tooltip.css({
+      top: offset.top + height / 2 - $tooltip.outerHeight() / 2,
+      left: offset.left + width + 10,
+      opacity: 1
+    });
+
+  }, function() {
+    $('.custom-tooltip').remove();
+  });
+});
