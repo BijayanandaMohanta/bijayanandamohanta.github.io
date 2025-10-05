@@ -86,3 +86,21 @@ $(document).ready(function() {
     $('.custom-tooltip').remove();
   });
 });
+
+// Back to Top Button Functionality
+$(document).ready(function () {
+  // Show/hide button on scroll
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 200) {
+      $("#backToTop").fadeIn();
+    } else {
+      $("#backToTop").fadeOut();
+    }
+  });
+
+  // Smooth scroll to top
+  $("#backToTop").click(function (e) {
+    e.preventDefault();
+    $("html, body").animate({ scrollTop: 0 }, 600);
+  });
+});
