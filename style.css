@@ -260,12 +260,10 @@ mark {
 }
 
 /* Back to top */
-#backToTop {
+#backToTop, #meetingSchedule {
   position: fixed;
-  bottom: 30px;
   left: 50%;
   translate: -50%;
-  display: none;
   background-color: #000;
   color: #fff;
   padding: .5rem 1rem;
@@ -282,7 +280,13 @@ mark {
     translate: none;
   }
 }
-
-#backToTop:hover {
+#backToTop{
+  bottom: 70px;
+}
+#meetingSchedule{
+  bottom: 30px;
+  display: block;
+}
+#backToTop:hover, #meetingSchedule:hover {
   background-color: #161616;
 }
