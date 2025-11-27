@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Meow+Script&family=Playwrite+PL:wght@100..400&family=Space+Grotesk:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Meow+Script&family=Playwrite+PL:wght@100..400&family=Space+Grotesk:wght@300..700&display=swap");
 :root {
   --accent-color: rgba(204, 204, 204, 0.7);
   --background-light-color: hsl(0, 0%, 97%);
@@ -9,11 +9,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Figtree","Space Grotesk", Calibri;
+  font-family: "Figtree", "Space Grotesk", Calibri;
 }
 /* body { */
-  /* margin-inline: max(5rem,calc(15vw)); Ensures at least 5rem, scales up with viewport */
-  /* @media (width < 40rem) {
+/* margin-inline: max(5rem,calc(15vw)); Ensures at least 5rem, scales up with viewport */
+/* @media (width < 40rem) {
     margin-inline: 0;
   } */
 /* } */
@@ -30,42 +30,45 @@ img {
   font-size: 13px;
   white-space: nowrap;
   z-index: 9;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   opacity: 0;
   transition: opacity 0.2s ease;
 }
 
-.main{
+.main {
   display: flex;
   /* gap: 1rem; */
-  .leftside-nav{
+  .leftside-nav {
     background-color: var(--background-light-color);
     text-align: center;
     border-right: 1px dashed var(--accent-color);
-    padding-inline: .5rem;
+    padding-inline: 0.5rem;
     padding-top: 1rem;
-    ul{
+    ul {
       list-style: none;
       display: flex;
       flex-direction: column;
       /* gap: 1rem; */
-      li{
+      li {
         border-bottom: 1px dashed var(--accent-color);
       }
-      li:last-child{
+      li:last-child {
         border-bottom: none;
       }
-      li a{
+      li a {
         text-decoration: none;
         color: #111;
-        padding: .5rem;
+        padding: 0.5rem;
         display: block;
       }
     }
   }
-  .rightside-content{
+  .rightside-content {
     margin-inline: auto;
-    padding-inline: max(2rem,calc(3vw)); /* Ensures at least 2rem, scales up with viewport */
+    padding-inline: max(
+      2rem,
+      calc(3vw)
+    ); /* Ensures at least 2rem, scales up with viewport */
     border-right: 1px dashed var(--accent-color);
     @media (width > 40rem) {
       border-left: 1px dashed var(--accent-color);
@@ -87,7 +90,7 @@ img {
   color: #111;
 }
 
-.top-section{
+.top-section {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -104,14 +107,14 @@ img {
       color: #111;
     }
   }
-  .connect-text{
+  .connect-text {
     position: relative;
-    img{
+    img {
       position: absolute;
       left: 1.5rem;
     }
   }
-  .connect-text span{
+  .connect-text span {
     font-family: "Meow Script", cursive;
     font-size: 1.2rem;
   }
@@ -128,8 +131,8 @@ img {
     rotate: -9deg;
   }
 }
-section h4{
-  padding-bottom: .5rem;
+section h4 {
+  padding-bottom: 0.5rem;
 }
 hr {
   margin-block: 2rem;
@@ -153,7 +156,7 @@ hr {
     justify-content: center;
     align-items: center;
     gap: 2px;
-    @media(width < 40rem){
+    @media (width < 40rem) {
       flex-direction: column;
     }
   }
@@ -260,19 +263,20 @@ mark {
 }
 
 /* Back to top */
-#backToTop, #meetingSchedule {
+#backToTop,
+#meetingSchedule {
   position: fixed;
   left: 50%;
   translate: -50%;
   background-color: #000;
   color: #fff;
-  padding: .5rem 1rem;
-  border-radius: .5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
   font-size: 13px;
   text-align: center;
   text-decoration: none;
   z-index: 10;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s ease;
   @media (width > 40rem) {
     left: auto;
@@ -280,13 +284,28 @@ mark {
     translate: none;
   }
 }
-#backToTop{
+#backToTop {
   bottom: 70px;
 }
-#meetingSchedule{
+#meetingSchedule {
   bottom: 30px;
   display: block;
 }
-#backToTop:hover, #meetingSchedule:hover {
+#backToTop:hover,
+#meetingSchedule:hover {
   background-color: #161616;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  filter: blur(12px);
+  transform: translateY(40px); /* start lower */
+  transition: opacity 1s ease-out, filter 1s ease-out, transform 1s ease-out;
+  will-change: opacity, filter, transform;
+}
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0); /* move up into place */
 }

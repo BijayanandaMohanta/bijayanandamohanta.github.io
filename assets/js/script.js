@@ -66,25 +66,29 @@ function setupWhatsAppRedirection() {
 setupWhatsAppRedirection();
 
 // Tooltip Functionality
-$(document).ready(function() {
-  $('a[data-tooltip-text]').hover(function(e) {
-    const tooltipText = $(this).attr('data-tooltip-text');
-    const $tooltip = $('<span class="custom-tooltip"></span>').text(tooltipText);
-    $('body').append($tooltip);
+$(document).ready(function () {
+  $("a[data-tooltip-text]").hover(
+    function (e) {
+      const tooltipText = $(this).attr("data-tooltip-text");
+      const $tooltip = $('<span class="custom-tooltip"></span>').text(
+        tooltipText
+      );
+      $("body").append($tooltip);
 
-    const offset = $(this).offset();
-    const width = $(this).outerWidth();
-    const height = $(this).outerHeight();
+      const offset = $(this).offset();
+      const width = $(this).outerWidth();
+      const height = $(this).outerHeight();
 
-    $tooltip.css({
-      top: offset.top + height / 2 - $tooltip.outerHeight() / 2,
-      left: offset.left + width + 10,
-      opacity: 1
-    });
-
-  }, function() {
-    $('.custom-tooltip').remove();
-  });
+      $tooltip.css({
+        top: offset.top + height / 2 - $tooltip.outerHeight() / 2,
+        left: offset.left + width + 10,
+        opacity: 1,
+      });
+    },
+    function () {
+      $(".custom-tooltip").remove();
+    }
+  );
 });
 
 // Back to Top Button Functionality
@@ -103,4 +107,24 @@ $(document).ready(function () {
     e.preventDefault();
     $("html, body").animate({ scrollTop: 0 }, 600);
   });
+});
+
+// Reveal on Scroll Functionality
+document.addEventListener("DOMContentLoaded", function () {
+  const revealElements = document.querySelectorAll(".reveal-on-scroll");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+
+  revealElements.forEach((el) => observer.observe(el));
 });
