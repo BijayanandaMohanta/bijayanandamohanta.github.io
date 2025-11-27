@@ -1,10 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Meow+Script&family=Playwrite+PL:wght@100..400&family=Space+Grotesk:wght@300..700&display=swap");
+
 :root {
+  color-scheme: light dark;
+  
+  /* Light mode colors (default) */
   --accent-color: rgba(204, 204, 204, 0.7);
   --background-light-color: hsl(0, 0%, 97%);
   --background-light-blue-color: hsl(180, 71%, 99%);
   --box-shadow-light: 0 0 2px rgba(0, 0, 0, 0.2);
+  --text-color: #111;
+  --text-inverse: #fff;
+  --border-color: var(--accent-color);
+  --card-bg: #fff;
+  --tooltip-bg: #333;
+  --tooltip-text: #fff;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark mode colors */
+    --accent-color: rgba(80, 80, 80, 0.7);
+    --background-light-color: hsl(0, 0%, 12%);
+    --background-light-blue-color: hsl(180, 20%, 15%);
+    --box-shadow-light: 0 0 2px rgba(255, 255, 255, 0.1);
+    --text-color: #f0f0f0;
+    --text-inverse: #111;
+    --border-color: var(--accent-color);
+    --card-bg: hsl(0, 0%, 15%);
+    --tooltip-bg: #e0e0e0;
+    --tooltip-text: #111;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -23,8 +50,8 @@ img {
 
 .custom-tooltip {
   position: absolute;
-  background-color: #333;
-  color: #fff;
+  background-color: var(--tooltip-bg);
+  color: var(--tooltip-text);
   padding: 6px 10px;
   border-radius: 1rem;
   font-size: 13px;
@@ -57,7 +84,7 @@ img {
       }
       li a {
         text-decoration: none;
-        color: #111;
+        color: var(--text-color);
         padding: 0.5rem;
         display: block;
       }
@@ -87,7 +114,7 @@ img {
   padding: 0.25rem 0.5rem;
   border-radius: 1rem;
   gap: 4px;
-  color: #111;
+  color: var(--text-color);
 }
 
 .top-section {
@@ -104,7 +131,7 @@ img {
     border-radius: 1rem;
     li a {
       text-decoration: none;
-      color: #111;
+      color: var(--text-color);
     }
   }
   .connect-text {
@@ -123,9 +150,10 @@ img {
 .intro {
   padding-block: 2rem;
   font-size: min(5rem, 2rem + 3vw);
+  color: var(--text-color);
   img {
     width: 5rem;
-    border: 5px solid #fff;
+    border: 5px solid var(--card-bg);
     box-shadow: var(--box-shadow-light);
     margin-bottom: -1rem;
     rotate: -9deg;
@@ -174,6 +202,7 @@ hr {
     box-shadow: var(--box-shadow-light);
     padding: 1rem;
     border-radius: 0.5rem;
+    background-color: var(--card-bg);
     * {
       display: block;
     }
@@ -193,8 +222,8 @@ hr {
       text-decoration: none;
       padding: 0.5rem 1rem;
       border-radius: 0.35rem;
-      background-color: #111;
-      color: #fff;
+      background-color: var(--text-color);
+      color: var(--text-inverse);
     }
   }
 }
@@ -243,7 +272,7 @@ footer {
 }
 .close-answer {
   float: right;
-  color: #000;
+  color: var(--text-color);
   background: none;
   border: none;
   font-size: 1.36rem;
@@ -268,8 +297,8 @@ mark {
   position: fixed;
   left: 50%;
   translate: -50%;
-  background-color: #000;
-  color: #fff;
+  background-color: var(--text-color);
+  color: var(--text-inverse);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   font-size: 13px;
@@ -293,7 +322,7 @@ mark {
 }
 #backToTop:hover,
 #meetingSchedule:hover {
-  background-color: #161616;
+  opacity: 0.85;
 }
 
 .reveal-on-scroll {
