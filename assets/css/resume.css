@@ -1,7 +1,11 @@
+html{
+    font-size: 14px;
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 1.5;
 }
 body {
     font-family: sans-serif;
@@ -28,12 +32,60 @@ img{
     justify-content: space-between;
 }
 hr{
+    border: none;
+    height: 1px;
     margin-block: 1rem;
+    background-color: #D3D3D3;
+    /* background-color: #ff0000; */
 }
 h2{
     margin-block: 1rem;
     padding-block: .25rem;
     background-color: #ededed;
+    border-radius: 2px;
+}
+h3{
+    margin-block: .75rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+table{
+    th{
+        text-align: left;
+        background-color: #fcfcfc;
+        padding-block: .4rem;
+    }
+    width: 100%;
+    border-collapse: collapse;
+}
+ul:not(.technology){
+    padding-left: 1.5rem;
+    li{
+        margin-block: .25rem;
+    }
+}
+.technology{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    li{
+        background-color: #f0f0f063;
+        padding: .25rem .5rem;
+        border-radius: 3px;
+    }
+}
+.experience-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: .5rem;
+    h3{
+        margin-block: 0;
+    }
+    div{
+        display: grid;
+    }
 }
 @media print {
     .page {
