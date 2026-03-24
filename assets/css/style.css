@@ -339,9 +339,14 @@ mark {
   transform: translateY(0); /* move up into place */
 }
 
+.social-posts{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
 .twitter-tweet 
 {
-  max-width: 300px !important;
+  max-width: 100% !important;
   iframe{
     width: unset !important;
     border-radius: 10px;
