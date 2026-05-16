@@ -384,7 +384,14 @@
                         }).format(new Date(value));
                     },
                     formatRepoName(value) {
-                        return value.replace(/[-_]/g, ' ');
+                        const formattedValue = value.replace(/[-_]/g, ' ');
+                        const maxLength = 'bijayanandamohanta'.length;
+
+                        if (formattedValue.includes(' ') || formattedValue.length <= maxLength) {
+                            return formattedValue;
+                        }
+
+                        return `${formattedValue.slice(0, maxLength)}...`;
                     },
                     normalizeUrl(value) {
                         if (!value) {
