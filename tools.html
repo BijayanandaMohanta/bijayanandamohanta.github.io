@@ -45,10 +45,12 @@
                 background: #fff;
                 border: 1px solid #d8d8d8;
                 border-radius: .75rem;
-                padding-block: .4rem;
                 padding-inline: .2rem;
                 z-index: 20;
                 font-size: 14px;
+                @media (min-width: 40rem) {
+                    padding-block: .4rem;
+                }
             }
 
             .tools-side-nav ul {
@@ -79,6 +81,15 @@
                     top: .75rem;
                 }
 
+                .tools-side-nav ul {
+                    flex-direction: row;
+                }
+
+                .tools-side-nav li + li {
+                    border-top: none;
+                    border-left: 1px solid #e7e7e7;
+                }
+
                 .tools-main {
                     margin-top: 4.5rem;
                 }
@@ -95,7 +106,7 @@
                 </ul>
             </nav>
 
-            <main class="tools-main mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 py-6 sm:px-6 lg:px-8">
+            <main class="tools-main mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 sm:py-6 sm:px-6 lg:px-8">
                 <section class="overflow-hidden rounded-lg border border-slate-200 bg-white">
                     <div class="border-b border-slate-200/70 px-6 py-5 sm:px-8">
                         <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">

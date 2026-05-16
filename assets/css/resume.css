@@ -17,7 +17,9 @@ body {
     background: #fff;
     border: 1px solid #d8d8d8;
     border-radius: .75rem;
-    padding: .35rem;
+    @media (min-width: 40rem) {
+        padding: .35rem;
+    }
 }
 .resume-side-nav ul {
     list-style: none;
@@ -132,6 +134,13 @@ ul:not(.technology){
     .resume-side-nav {
         left: .75rem;
         top: .75rem;
+    }
+    .resume-side-nav ul {
+        flex-direction: row;
+    }
+    .resume-side-nav li + li {
+        border-top: none;
+        border-left: 1px solid #e7e7e7;
     }
     .print-button {
         right: .75rem;
